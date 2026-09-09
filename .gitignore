@@ -1,30 +1,115 @@
-# Dependencies
-node_modules/
-frontend/node_modules/
-/vendor/
-composer.lock
-.venv/
-venv/
+# ==============================================================================
+# CivicResolve Guardian - Comprehensive Git Ignore Rules
+# ==============================================================================
 
-# Build artifacts
-dist/
-frontend/dist/
-build/
-*.egg-info/
-
-# Databases & Runtime uploads
-*.db
-*.sqlite
-uploads/
-test_civicresolve.db
-civicresolve.db
-
-# Caches & Logs
+# --- Python & Virtual Environments ---
 __pycache__/
 */__pycache__/
+*/*/__pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
 .pytest_cache/
-*.log
-.DS_Store
-Thumbs.db
+cover/
+*.egg-info/
+.installed.cfg
+*.egg
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+# --- Node.js & Frontend ---
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+frontend/dist/
+frontend/dist-ssr/
+frontend/.wireit
+.turbo
+.parcel-cache
+
+# --- PHP / Composer ---
+/vendor/
+composer.lock
+
+# --- Environment & Secret Credentials ---
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa
+id_dsa
+*.keystore
+
+# --- Databases & Runtime Data ---
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+civicresolve.db
+test_civicresolve.db
+uploads/
+backend/uploads/
+
+# --- Operating System & Editor Artifacts ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.bak
+
+# --- Logs & Monitoring ---
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*

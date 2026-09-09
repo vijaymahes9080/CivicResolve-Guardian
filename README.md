@@ -215,3 +215,18 @@ CivicResolve Guardian incorporates 30 innovative civic-tech modules elevating mu
 - [Data Privacy & Dual-Storage Architecture](file:///d:/current%20project/zz/docs/privacy.md)
 - [Interactive Demo Walkthrough](file:///d:/current%20project/zz/docs/demo-script.md)
 - [Project Roadmap](file:///d:/current%20project/zz/docs/roadmap.md)
+
+---
+
+## 👤 Author & Maintainer
+
+**Vijay Mahes**  
+- **Email**: [Vijaypradhap2004@gmail.com](mailto:Vijaypradhap2004@gmail.com)  
+- **GitHub**: [@vijaymahes9080](https://github.com/vijaymahes9080)  
+- **Repository**: [CivicResolve-Guardian](https://github.com/vijaymahes9080/CivicResolve-Guardian)  
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](file:///d:/current%20project/zz/LICENSE) file for complete details.

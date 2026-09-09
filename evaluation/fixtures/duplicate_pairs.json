@@ -1,0 +1,72 @@
+[
+  {
+    "pair_id": "DUP-01",
+    "complaint_a": "Severe drinking water pipeline burst on 4th Cross Street, Ward 12. Water is flooding the road.",
+    "complaint_b": "Main drinking water pipe broken and leaking heavily on 4th Cross Street, Ward 12. Huge water waste.",
+    "ward": "Ward 12",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-02",
+    "complaint_a": "Open manhole without cover near St. Joseph School in Ward 12. Dangerous for kids.",
+    "complaint_b": "Manhole lid missing in front of St. Joseph School gate, Ward 12. Urgent hazard.",
+    "ward": "Ward 12",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-03",
+    "complaint_a": "Garbage bin overflowing for three days near Vegetable Market, Ward 14. Severe foul smell.",
+    "complaint_b": "Trash not collected from the big bin at Vegetable Market, Ward 14. Dogs scattering waste.",
+    "ward": "Ward 14",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-04",
+    "complaint_a": "Street lights not working on 2nd Main Road from Pillar 12 to 18. Pitch dark at night.",
+    "complaint_b": "All street lamps failed on 2nd Main Road near Pillar 15. Darkness on entire street.",
+    "ward": "Ward 12",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-05",
+    "complaint_a": "Deep crater pothole on Kamarajar Salai near Bus Terminus. Two-wheelers falling down.",
+    "complaint_b": "Huge road pothole outside Kamarajar Salai Bus Terminus causing accidents daily.",
+    "ward": "Ward 14",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-06",
+    "complaint_a": "Stagnant drainage pool breeding thousands of mosquitoes in Ward 14 vacant plot.",
+    "complaint_b": "Dengue mosquito breeding in stagnant water pool at empty plot in Ward 14. Please fog area.",
+    "ward": "Ward 14",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-07",
+    "complaint_a": "Dead stray dog carcass on footpath near Post Office, Ward 12.",
+    "complaint_b": "Dead dog lying on sidewalk near Ward 12 Post Office since morning. Foul odor.",
+    "ward": "Ward 12",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-08",
+    "complaint_a": "Exposed high voltage wire dangling from electric pole on Cross Street 3, Ward 12.",
+    "complaint_b": "Snapped live electrical wire hanging down to pedestrian height on Cross Street 3, Ward 12.",
+    "ward": "Ward 12",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-09",
+    "complaint_a": "Damaged storm water drain concrete slab on Anna Salai footpath. Pedestrians can fall inside.",
+    "complaint_b": "Broken footpath drain slab on Anna Salai creating open cavity for walkers.",
+    "ward": "Ward 12",
+    "is_duplicate": true
+  },
+  {
+    "pair_id": "DUP-10",
+    "complaint_a": "Yellow discolored tap water with chemical stench on Ward 14 South Street.",
+    "complaint_b": "Tap drinking water coming brown and smelly on South Street, Ward 14.",
+    "ward": "Ward 14",
+    "is_duplicate": true
+  }
+]

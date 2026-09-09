@@ -1,0 +1,82 @@
+{
+  "brand": "CivicResolve Guardian",
+  "tagline": "Multilingual, Evidence-Grounded Municipal Grievance Redressal",
+  "nav": {
+    "fileComplaint": "File Grievance",
+    "trackCase": "Track Status",
+    "officerQueue": "Officer Queue",
+    "policySearch": "Policy Bylaws",
+    "analytics": "SLA Metrics",
+    "switchRole": "Simulate Role"
+  },
+  "roles": {
+    "citizen": "Citizen (Vijay Mahes)",
+    "officer": "Grievance Officer (R. Selvaraj)",
+    "admin": "Commissioner (Dr. Arumugam IAS)"
+  },
+  "citizen": {
+    "title": "Submit a Public Grievance",
+    "subtitle": "Voice or text submission with automatic citizen PII privacy protection",
+    "contentLabel": "Describe the civic issue in detail",
+    "contentPlaceholder": "e.g., Severe drinking water contamination and pipe leak near school on 4th Cross Street, Ward 12...",
+    "wardLabel": "Ward Number",
+    "zoneLabel": "Municipal Zone",
+    "voiceInput": "Record Voice Note",
+    "voiceRecording": "Recording audio... Click stop when finished",
+    "stopVoice": "Stop & Transcribe",
+    "piiDisclosure": "🛡️ Dual-Storage Privacy Active: Phone numbers, Aadhaar IDs, and door numbers will be automatically redacted before AI triage or public audit display.",
+    "previewPII": "Preview PII Redaction",
+    "submitBtn": "Submit Grievance to Guardian",
+    "submitting": "Submitting...",
+    "successMessage": "Grievance submitted successfully! Reference ID:"
+  },
+  "tracker": {
+    "title": "Track Your Grievance",
+    "searchPlaceholder": "Enter Complaint UUID or select active case...",
+    "status": "Current Status",
+    "department": "Assigned Department",
+    "priority": "Triage Priority",
+    "slaDue": "SLA Resolution Due",
+    "slaRemaining": "Time Remaining",
+    "timeline": "Status Journey",
+    "evidence": "Attached Evidence"
+  },
+  "officer": {
+    "queueTitle": "Triage & Review Queue",
+    "queueSubtitle": "Review AI recommendations, inspect legal citations, and confirm or override routing",
+    "filterDept": "Filter Department",
+    "filterPriority": "Filter Priority",
+    "filterStatus": "Filter Status",
+    "runTriage": "Run AI Triage",
+    "approveRouting": "Approve Routing",
+    "checkResolution": "Verify Resolution",
+    "auditTrail": "Audit Trail"
+  },
+  "drawer": {
+    "title": "Human-in-the-Loop Routing Review",
+    "aiRecommendation": "AI Recommendation",
+    "suggestedDept": "Recommended Department",
+    "suggestedPriority": "Priority Level",
+    "confidence": "Confidence Score",
+    "citations": "Cited Policy Bylaws & SLAs",
+    "missingEvidence": "Missing Evidence Gaps",
+    "overrideToggle": "Override Department or Priority",
+    "overrideDept": "Change Department",
+    "overridePriority": "Change Priority",
+    "overrideReason": "Reason for Override",
+    "confirmBtn": "Confirm & Dispatch Field Team"
+  },
+  "resolution": {
+    "modalTitle": "Submit & Verify Resolution",
+    "actionSummary": "Action Taken Summary",
+    "actionPlaceholder": "Describe work completed, materials used, and site inspection details...",
+    "completionNotes": "Officer Completion Notes",
+    "attachProof": "Attach Resolution Proof (Photo/Report)",
+    "evaluateBtn": "Evaluate Resolution Quality",
+    "verdict": "Evaluation Verdict",
+    "likelyResolved": "Likely Genuinely Resolved",
+    "weakResolution": "Weak Resolution (Insufficient Detail)",
+    "insufficientEvidence": "Insufficient Evidence (Photo Missing)",
+    "contradictionDetected": "Contradiction Detected"
+  }
+}

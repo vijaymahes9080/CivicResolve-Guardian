@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RoutingRecommendation",
+  "type": "object",
+  "required": [
+    "complaint_id",
+    "suggested_category",
+    "suggested_department",
+    "priority_score",
+    "confidence",
+    "reasons",
+    "citations",
+    "missing_evidence",
+    "approval_required"
+  ],
+  "properties": {
+    "complaint_id": { "type": "string", "format": "uuid" },
+    "suggested_category": { "type": "string" },
+    "suggested_department": { "type": "string" },
+    "priority_score": { "type": "string", "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"] },
+    "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+    "reasons": { "type": "array", "items": { "type": "string" } },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["policy_id", "section_id", "title", "excerpt", "relevance_score"],
+        "properties": {
+          "policy_id": { "type": "string" },
+          "section_id": { "type": "string" },
+          "title": { "type": "string" },
+          "excerpt": { "type": "string" },
+          "relevance_score": { "type": "number" }
+        }
+      }
+    },
+    "duplicate_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["complaint_id", "similarity_score", "status"],
+        "properties": {
+          "complaint_id": { "type": "string" },
+          "similarity_score": { "type": "number" },
+          "status": { "type": "string" }
+        }
+      }
+    },
+    "missing_evidence": { "type": "array", "items": { "type": "string" } },
+    "draft_citizen_response": { "type": "string" },
+    "approval_required": { "type": "boolean", "default": true }
+  },
+  "additionalProperties": false
+}

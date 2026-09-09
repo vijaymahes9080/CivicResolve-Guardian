@@ -1,0 +1,82 @@
+[
+  {
+    "id": "RES-01",
+    "complaint": "Road pothole crater near temple gate.",
+    "action_summary": "Bitumen patch completed and compacted by road team. Surface smooth.",
+    "has_photo": true,
+    "citizen_feedback": 5,
+    "expected_verdict": "likely_resolved"
+  },
+  {
+    "id": "RES-02",
+    "complaint": "Drinking water contamination with yellow turbidity.",
+    "action_summary": "Inspected site. Main pipeline flushed and water test passed zero coliform.",
+    "has_photo": true,
+    "citizen_feedback": 5,
+    "expected_verdict": "likely_resolved"
+  },
+  {
+    "id": "RES-03",
+    "complaint": "Street light not glowing on 2nd avenue.",
+    "action_summary": "Replaced 40W LED fixture.",
+    "has_photo": false,
+    "citizen_feedback": null,
+    "expected_verdict": "insufficient_evidence"
+  },
+  {
+    "id": "RES-04",
+    "complaint": "Pothole on 1st cross.",
+    "action_summary": "Work cannot be repaired today due to funds awaited.",
+    "has_photo": false,
+    "citizen_feedback": null,
+    "expected_verdict": "contradiction_detected"
+  },
+  {
+    "id": "RES-05",
+    "complaint": "Garbage dump near hospital.",
+    "action_summary": "Done.",
+    "has_photo": false,
+    "citizen_feedback": null,
+    "expected_verdict": "insufficient_evidence"
+  },
+  {
+    "id": "RES-06",
+    "complaint": "Sewer overflow on market lane.",
+    "action_summary": "Temporary patch placed, major tender called later.",
+    "has_photo": true,
+    "citizen_feedback": 2,
+    "expected_verdict": "contradiction_detected"
+  },
+  {
+    "id": "RES-07",
+    "complaint": "Broken drain slab.",
+    "action_summary": "Cast iron grate installed and sealed with concrete.",
+    "has_photo": true,
+    "citizen_feedback": 5,
+    "expected_verdict": "likely_resolved"
+  },
+  {
+    "id": "RES-08",
+    "complaint": "Mosquito breeding in stagnant pit.",
+    "action_summary": "Chemical larvicide applied and fogging completed.",
+    "has_photo": true,
+    "citizen_feedback": 5,
+    "expected_verdict": "likely_resolved"
+  },
+  {
+    "id": "RES-09",
+    "complaint": "Hanging live wire near school.",
+    "action_summary": "Wire severed.",
+    "has_photo": false,
+    "citizen_feedback": 1,
+    "expected_verdict": "contradiction_detected"
+  },
+  {
+    "id": "RES-10",
+    "complaint": "Dead animal on street.",
+    "action_summary": "Sanitation crew removed carcass and applied bleaching powder.",
+    "has_photo": true,
+    "citizen_feedback": 5,
+    "expected_verdict": "likely_resolved"
+  }
+]

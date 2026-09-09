@@ -1,0 +1,12 @@
+[
+  { "id": "MULTI-01", "lang": "ta", "text": "குடிநீர் குழாய் உடைந்து தெருவில் தண்ணீர் பெருமளவில் வீணாகிறது.", "expected_dept": "Water Supply & Sewerage Board" },
+  { "id": "MULTI-02", "lang": "ta", "text": "தெரு விளக்கு எரியவில்லை, பெண்கள் இரவு நேரத்தில் செல்ல அச்சப்படுகிறார்கள்.", "expected_dept": "Electrical & Street Lighting" },
+  { "id": "MULTI-03", "lang": "ta", "text": "ரோட்டில் பெரிய பள்ளம் மற்றும் குழி உள்ளது, பைக் ஓட்டுபவர்கள் கீழே விழுகிறார்கள்.", "expected_dept": "Roads & Bridges" },
+  { "id": "MULTI-04", "lang": "ta", "text": "குப்பை தொட்டி நிரம்பி வழிகிறது, துர்நாற்றம் மற்றும் தெரு நாய்கள் தொல்லை.", "expected_dept": "Solid Waste Management" },
+  { "id": "MULTI-05", "lang": "ta", "text": "தேங்கிய நீரில் கொசுக்கள் அதிகளவில் உற்பத்தி ஆகிறது, டெங்கு பரவும் அபாயம் உள்ளது.", "expected_dept": "Public Health & Sanitation" },
+  { "id": "MULTI-06", "lang": "ta", "text": "சாக்கடை கழிவுநீர் மூடி உடைந்து கழிவுநீர் வெளியேறுகிறது.", "expected_dept": "Water Supply & Sewerage Board" },
+  { "id": "MULTI-07", "lang": "en-ta", "text": "Our area kudineer pipe is burst and heavy thanni waste on street.", "expected_dept": "Water Supply & Sewerage Board" },
+  { "id": "MULTI-08", "lang": "en-ta", "text": "Road kuzhi near school, please patch this saalai immediately.", "expected_dept": "Roads & Bridges" },
+  { "id": "MULTI-09", "lang": "en-ta", "text": "Theru vilakku not working on main street, very dark.", "expected_dept": "Electrical & Street Lighting" },
+  { "id": "MULTI-10", "lang": "en-ta", "text": "Kuppai bin overflowing near market, foul smell.", "expected_dept": "Solid Waste Management" }
+]

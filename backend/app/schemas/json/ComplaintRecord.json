@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ComplaintRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "citizen_id",
+    "original_language",
+    "raw_content_ref",
+    "redacted_content",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "citizen_id": { "type": "string", "format": "uuid" },
+    "original_language": { "type": "string", "enum": ["en", "ta"] },
+    "raw_content_ref": { "type": "string" },
+    "redacted_content": { "type": "string", "minLength": 5 },
+    "has_audio": { "type": "boolean", "default": false },
+    "audio_consent_stored": { "type": "boolean", "default": false },
+    "transcription": { "type": "string" },
+    "category": { "type": "string" },
+    "department": { "type": "string" },
+    "ward": { "type": "string" },
+    "zone": { "type": "string" },
+    "priority": { "type": "string", "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"] },
+    "status": {
+      "type": "string",
+      "enum": [
+        "SUBMITTED",
+        "TRIAGED_PENDING_APPROVAL",
+        "ROUTED_ASSIGNED",
+        "IN_PROGRESS",
+        "ACTION_PROPOSED",
+        "RESOLVED_PENDING_VERIFICATION",
+        "VERIFIED_RESOLVED",
+        "REOPENED",
+        "REJECTED"
+      ]
+    },
+    "assigned_officer_id": { "type": "string" },
+    "evidence_items": {
+      "type": "array",
+      "items": { "$ref": "EvidenceItem.json" }
+    },
+    "routing_recommendation": { "$ref": "RoutingRecommendation.json" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "sla_due_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

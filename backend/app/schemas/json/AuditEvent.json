@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditEvent",
+  "type": "object",
+  "required": ["id", "case_id", "actor_id", "actor_role", "action_type", "details", "timestamp", "signature"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "case_id": { "type": "string", "format": "uuid" },
+    "actor_id": { "type": "string" },
+    "actor_role": { "type": "string", "enum": ["citizen", "officer", "admin", "system", "mcp_tool"] },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "COMPLAINT_CREATED",
+        "EVIDENCE_ATTACHED",
+        "PII_REDACTED",
+        "TRIAGE_RECOMMENDED",
+        "ROUTING_APPROVED",
+        "ROUTING_OVERRIDDEN",
+        "OFFICER_DISPATCHED",
+        "STATUS_CHANGED",
+        "RESOLUTION_SUBMITTED",
+        "RESOLUTION_EVALUATED",
+        "REMINDER_SENT",
+        "ESCALATED_OVERDUE",
+        "MCP_TOOL_INVOKED"
+      ]
+    },
+    "details": { "type": "object" },
+    "previous_state": { "type": "string" },
+    "new_state": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "signature": { "type": "string" }
+  },
+  "additionalProperties": false
+}

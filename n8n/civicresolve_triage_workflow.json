@@ -1,0 +1,292 @@
+{
+  "name": "CivicResolve Guardian - Triage, Reminder & Escalation Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "civicresolve-complaint-submitted",
+        "responseMode": "onReceived",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "id": "node-webhook-intake",
+      "name": "Grievance Intake Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "=http://localhost:8000/api/v1/complaints/{{$json.body.complaint_id}}",
+        "authentication": "none",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$json.body.token}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-fetch-case",
+      "name": "Fetch Case Details",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://localhost:8000/api/v1/complaints/{{$json.id}}/triage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$node[\"Grievance Intake Webhook\"].json.body.token}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-call-triage",
+      "name": "Invoke Triage Engine",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.priority_score}}",
+              "operation": "equal",
+              "value2": "CRITICAL"
+            }
+          ]
+        }
+      },
+      "id": "node-check-critical",
+      "name": "Is Critical Priority?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [920, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://httpbin.org/post",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"channel\": \"OFFICER_DISPATCH_SMS\",\n  \"case_id\": \"{{$node[\"Invoke Triage Engine\"].json.complaint_id}}\",\n  \"alert\": \"CRITICAL CIVIC ALERT: Immediate officer review required for {{$node[\"Invoke Triage Engine\"].json.suggested_department}}\",\n  \"citations\": {{$node[\"Invoke Triage Engine\"].json.citations}},\n  \"timestamp\": \"{{$now.toISO()}}\"\n}",
+        "options": {}
+      },
+      "id": "node-mock-urgent-notify",
+      "name": "Mock Urgent Alert (SMS/Dispatch)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1160, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://httpbin.org/post",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"channel\": \"OFFICER_QUEUE_NOTIFICATION\",\n  \"case_id\": \"{{$node[\"Invoke Triage Engine\"].json.complaint_id}}\",\n  \"department\": \"{{$node[\"Invoke Triage Engine\"].json.suggested_department}}\",\n  \"priority\": \"{{$node[\"Invoke Triage Engine\"].json.priority_score}}\",\n  \"draft_update\": \"{{$node[\"Invoke Triage Engine\"].json.draft_citizen_response}}\"\n}",
+        "options": {}
+      },
+      "id": "node-mock-standard-notify",
+      "name": "Mock Queue Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1160, 400]
+    },
+    {
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      },
+      "id": "node-wait-sla",
+      "name": "Wait for SLA Reminder Window",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1400, 300]
+    },
+    {
+      "parameters": {
+        "url": "=http://localhost:8000/api/v1/complaints/{{$node[\"Invoke Triage Engine\"].json.complaint_id}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$node[\"Grievance Intake Webhook\"].json.body.token}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-check-status-after-wait",
+      "name": "Check Status After SLA Window",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1620, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.status}}",
+              "operation": "equal",
+              "value2": "TRIAGED_PENDING_APPROVAL"
+            }
+          ]
+        }
+      },
+      "id": "node-check-overdue",
+      "name": "Still Pending Approval?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1840, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://httpbin.org/post",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"channel\": \"ESCALATION_COMMISSIONER\",\n  \"alert\": \"SLA BREACH WARNING: Complaint {{$json.id}} has been pending officer approval for > 24 hours.\",\n  \"department\": \"{{$json.department}}\",\n  \"escalation_level\": \"L2_MUNICIPAL_COMMISSIONER\"\n}",
+        "options": {}
+      },
+      "id": "node-escalate-overdue",
+      "name": "Escalate Overdue Case (L2 Alert)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2060, 200]
+    },
+    {
+      "parameters": {},
+      "id": "node-dead-letter",
+      "name": "Dead Letter & Error Log",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [700, 520]
+    }
+  ],
+  "connections": {
+    "Grievance Intake Webhook": {
+      "main": [
+        [
+          {
+            "node": "Fetch Case Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Case Details": {
+      "main": [
+        [
+          {
+            "node": "Invoke Triage Engine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Invoke Triage Engine": {
+      "main": [
+        [
+          {
+            "node": "Is Critical Priority?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Critical Priority?": {
+      "main": [
+        [
+          {
+            "node": "Mock Urgent Alert (SMS/Dispatch)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mock Queue Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mock Urgent Alert (SMS/Dispatch)": {
+      "main": [
+        [
+          {
+            "node": "Wait for SLA Reminder Window",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mock Queue Notification": {
+      "main": [
+        [
+          {
+            "node": "Wait for SLA Reminder Window",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for SLA Reminder Window": {
+      "main": [
+        [
+          {
+            "node": "Check Status After SLA Window",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status After SLA Window": {
+      "main": [
+        [
+          {
+            "node": "Still Pending Approval?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Still Pending Approval?": {
+      "main": [
+        [
+          {
+            "node": "Escalate Overdue Case (L2 Alert)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CitizenProfile",
+  "type": "object",
+  "required": ["id", "full_name", "phone_number", "preferred_language"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "full_name": { "type": "string", "minLength": 2 },
+    "phone_number": { "type": "string", "pattern": "^(\\+91[\\-\\s]?)?[0-9]{10}$" },
+    "email": { "type": "string", "format": "email" },
+    "aadhaar_masked": { "type": "string", "pattern": "^[X]{8}[0-9]{4}$" },
+    "ward": { "type": "string" },
+    "zone": { "type": "string" },
+    "preferred_language": { "type": "string", "enum": ["en", "ta"] },
+    "created_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

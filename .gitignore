@@ -1,7 +1,30 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
 /vendor/
 composer.lock
-node_modules/
-.env
+.venv/
+venv/
+
+# Build artifacts
+dist/
+frontend/dist/
+build/
+*.egg-info/
+
+# Databases & Runtime uploads
+*.db
+*.sqlite
+uploads/
+test_civicresolve.db
+civicresolve.db
+
+# Caches & Logs
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pytest_cache/
+*.log
 .DS_Store
 Thumbs.db
-*.log
+.env

@@ -1,0 +1,12 @@
+[
+  { "id": "OD-01", "department": "Water Supply & Sewerage Board", "sla_hours": 24, "hours_elapsed": 72, "is_overdue": true, "escalation_tier": "L2_COMMISSIONER" },
+  { "id": "OD-02", "department": "Electrical & Street Lighting", "sla_hours": 6, "hours_elapsed": 18, "is_overdue": true, "escalation_tier": "L1_EXECUTIVE_ENGINEER" },
+  { "id": "OD-03", "department": "Roads & Bridges", "sla_hours": 48, "hours_elapsed": 96, "is_overdue": true, "escalation_tier": "L2_COMMISSIONER" },
+  { "id": "OD-04", "department": "Solid Waste Management", "sla_hours": 24, "hours_elapsed": 40, "is_overdue": true, "escalation_tier": "L1_EXECUTIVE_ENGINEER" },
+  { "id": "OD-05", "department": "Public Health & Sanitation", "sla_hours": 24, "hours_elapsed": 30, "is_overdue": true, "escalation_tier": "L1_EXECUTIVE_ENGINEER" },
+  { "id": "OD-06", "department": "Water Supply & Sewerage Board", "sla_hours": 12, "hours_elapsed": 36, "is_overdue": true, "escalation_tier": "L2_COMMISSIONER" },
+  { "id": "OD-07", "department": "Roads & Bridges", "sla_hours": 24, "hours_elapsed": 60, "is_overdue": true, "escalation_tier": "L2_COMMISSIONER" },
+  { "id": "OD-08", "department": "Solid Waste Management", "sla_hours": 6, "hours_elapsed": 14, "is_overdue": true, "escalation_tier": "L1_EXECUTIVE_ENGINEER" },
+  { "id": "OD-09", "department": "Electrical & Street Lighting", "sla_hours": 24, "hours_elapsed": 48, "is_overdue": true, "escalation_tier": "L1_EXECUTIVE_ENGINEER" },
+  { "id": "OD-10", "department": "Public Health & Sanitation", "sla_hours": 48, "hours_elapsed": 120, "is_overdue": true, "escalation_tier": "L2_COMMISSIONER" }
+]

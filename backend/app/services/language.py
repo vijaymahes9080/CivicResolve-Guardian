@@ -29,3 +29,7 @@ class LanguageDetector:
             return "ta"
             
         return "en"
+
+
+def detect_language(text: str) -> str:
+    return LanguageDetector.detect(text)

@@ -1,5 +1,5 @@
 import re
-from typing import Tuple, List, Dict
+from typing import Tuple, List, Dict, Any
 
 class PIIRedactionEngine:
     """
@@ -80,3 +80,11 @@ class PIIRedactionEngine:
         return redacted_text, audit_records
 
 pii_engine = PIIRedactionEngine()
+
+
+def redact_pii(text: str) -> Dict[str, Any]:
+    redacted, entities = pii_engine.redact(text)
+    return {
+        "redacted_text": redacted,
+        "entities": entities,
+    }

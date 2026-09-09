@@ -1,0 +1,14 @@
+{
+    "name": "vijaymahes9080/civicresolve-guardian",
+    "description": "CivicResolve Guardian - Civic issue resolution, tracking, and governance platform",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vijay Mahes",
+            "email": "Vijaypradhap2004@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {}
+}

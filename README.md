@@ -9,6 +9,10 @@
 [![React 18](https://img.shields.io/badge/React-18-cyan.svg)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 
+<p align="center">
+  <img src="docs/assets/hero_light.png" alt="CivicResolve Guardian Light Theme Dashboard" width="100%" />
+</p>
+
 ---
 
 ## 🌟 Mission & Key Capabilities
@@ -26,6 +30,10 @@ Public grievance portals worldwide suffer from three systemic crises:
 - **Resolution Quality Checker**: Evaluates whether officer resolution claims are genuine, evidence-backed, date-consistent, and non-contradictory.
 - **Permissioned MCP Server**: Exposes 6 strictly audited tools for external agentic integration under deny-by-default access control.
 - **Automated n8n Workflows**: Full lifecycle management with reminders, SLA escalation, and dead-letter error handling.
+
+<p align="center">
+  <img src="docs/assets/citizen_portal_light.png" alt="Citizen Grievance Submission & Dual-Storage Privacy Vault" width="100%" />
+</p>
 
 ---
 
@@ -147,6 +155,10 @@ Frontend runs at `http://localhost:5173`.
 - **No Unsafe Autonomous Escalation**: AI models recommend; only human officers execute official assignments and closures.
 - **Prompt Injection Immunity**: Complaint text is sanitized and passed through typed parameter boundaries.
 
+<p align="center">
+  <img src="docs/assets/merkle_audit_light.png" alt="Cryptographic Merkle Audit Engine" width="100%" />
+</p>
+
 ---
 
 ## 🐳 Docker Deployment
@@ -215,6 +227,7 @@ CivicResolve Guardian incorporates 30 innovative civic-tech modules elevating mu
 - [Data Privacy & Dual-Storage Architecture](file:///d:/current%20project/zz/docs/privacy.md)
 - [Interactive Demo Walkthrough](file:///d:/current%20project/zz/docs/demo-script.md)
 - [Project Roadmap](file:///d:/current%20project/zz/docs/roadmap.md)
+- [LinkedIn Showcase Post & Media Kit](file:///d:/current%20project/zz/linkedin.md)
 
 ---
 
